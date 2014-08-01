@@ -16,5 +16,12 @@ post '/users/new' do
 		flash.now[:errors] = @user.errors.full_messages
 		erb :"users/new"
 	end
+end
 
+get '/session/new' do
+	erb :"session/new"
+end
+
+post '/session/new' do
+	redirect to('/')
 end
