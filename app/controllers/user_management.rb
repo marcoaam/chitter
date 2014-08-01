@@ -23,5 +23,12 @@ get '/session/new' do
 end
 
 post '/session/new' do
-	redirect to('/')
+	user = User.authenticate(params[:username], params[:password])
+	if user
+		session[:user_id] = user.id
+		redirect to('/')
+	else
+		flash[:errors] = ['Incorrect log in details please try again']
+		erb :"session/new"
+	end
 end

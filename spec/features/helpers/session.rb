@@ -9,7 +9,7 @@ def sign_up(username = "marcoaam", name = "Marco", email = "marco@gmail.com", pa
   click_button "Sign up"
 end
 
-def sign_in(name = 'marcoaam', password = 'azul')
+def sign_in(name, password)
   visit '/session/new'
   expect(page.status_code).to eq(200)
   fill_in :username, :with => name

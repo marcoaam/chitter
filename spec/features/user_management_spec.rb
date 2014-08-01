@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'When browsing the home page' do
+feature 'When user browsing the home page' do
 	
 	scenario 'User can sign up' do
 		sign_up('marcoaam', 'Marco', 'marco@gmail.com', 'azul', 'azul')
@@ -11,14 +11,23 @@ feature 'When browsing the home page' do
 
 end
 
-feature 'When browsing the home page' do
+feature 'When user browsing the home page' do
 
 	before(:each) do
-		sign_up('marco33', 'marco', 'marco@gmail.com', 'correct_password', 'correct_password')
+		User.create(:username => 'marco33', 
+								:name => 'marco',
+								:email => 'marco@gmail.com',
+                :password => 'test', 
+                :password_confirmation => 'test')
 	end
 
 	scenario 'Can sign in with correct details' do
-		sign_in('marco', 'correct_password')
+		sign_in('marco33', 'test')
 		expect(page).to have_content('Welcome, marco')
+	end
+
+	scenario 'Can not sign in with incorrect details' do
+		sign_in('marco33', 'wrong_password')
+		expect(page).to have_content('Incorrect log in details please try again')
 	end
 end
