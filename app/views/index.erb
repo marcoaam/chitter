@@ -1,4 +1,4 @@
 <% @posts.each do |post| %>
-	<%= post.post %>
-	<%= post.user.username %>
+	<%= post.post %> 
+	Posted by @<%= post.user.username %><br>
 <% end %>
