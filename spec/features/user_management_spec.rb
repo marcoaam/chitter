@@ -1,4 +1,7 @@
 require 'spec_helper'
+require_relative './helpers/session'
+
+include SessionHelper
 
 feature 'When user browsing the home page' do
 	
