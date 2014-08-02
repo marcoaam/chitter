@@ -6,15 +6,17 @@
 				Welcome, <%= current_user.name %>
 			</span>
 			<a href="/users/sign-out"><button>Sign out</button></a>
-			<a href="/posts/create"><button>Create post</button></a>
+			<% unless request.path_info == '/posts/create' %>
+				<a href="/posts/create"><button>Create post</button></a>
+			<%end%>
 		<% else %>
-		<% if request.path_info == '/session/new' %>
-			<a href="/users/new"><button>Sign up</button></a>
-		<% elsif request.path_info == '/users/new' %>
-			<a href="/session/new"><button>Sign in</button></a>
-		<% else %>
-			<a href="/users/new"><button>Sign up</button></a>
-			<a href="/session/new"><button>Sign in</button></a>
-		<% end %>
+			<% if request.path_info == '/session/new' %>
+				<a href="/users/new"><button>Sign up</button></a>
+			<% elsif request.path_info == '/users/new' %>
+				<a href="/session/new"><button>Sign in</button></a>
+			<% else %>
+				<a href="/users/new"><button>Sign up</button></a>
+				<a href="/session/new"><button>Sign in</button></a>
+			<% end %>
 		<% end %>
 </header>
