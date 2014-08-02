@@ -1,0 +1,4 @@
+<% @posts.each do |post| %>
+	<%= post.post %> 
+	Posted by <a href="/filter/<%=post.user.username %>">@<%= post.user.username %></a><br>
+<% end %>

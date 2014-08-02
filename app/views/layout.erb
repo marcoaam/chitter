@@ -4,31 +4,8 @@
 	<link href="/stylesheets/stylesheet.css" rel="stylesheet">
 </head>
 <body>
-<header class="clearfix">
-	<div id="logo">Chitter</div><br>
-	<div id="user-links">
-		<%if current_user %>
-			<span id="welcome-message">
-				Welcome, <%= current_user.name %>
-			</span>
-			<a href="/users/sign-out"><button>Sign out</button></a>
-			<a href="/posts/create"><button>Create post</button></a>
-		<% end %>
-</header>
-
-  <% if flash[:errors] && !flash[:errors].empty? %>
-	  Sorry, there were the following problems with the form. 
-	  <ul id="errors">
-	    <% flash[:errors].each do |error| %>
-	      <li><%= error %></li>
-	    <% end %>
-	  </ul>
-	<% end %>
-	 <% if flash[:notice] %>
-    <div id="notice">
-      <%= flash[:notice] %>
-    </div>
-  <% end %>
+	<%= erb :header %>
+	<%= erb :flash_errors %>
   <%= yield %>
 </body>
 </html>

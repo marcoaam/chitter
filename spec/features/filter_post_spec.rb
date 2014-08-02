@@ -1,16 +1,15 @@
 require 'spec_helper'
 
-feature 'List of all posts' do
-
+feature 'When user browses the home page' do
 	before(:each) do
-		Post.create(:post => "Went to Makers Academy today",
+		Post.create(:post => 'Love coding',
 								:user => User.create(:username => 'marcoaam',
 																		:name => 'Marco',
 																		:email => 'marco.army@gmail.com',
 																		:password_digest => '1234'
 																		)
 								)
-		Post.create(:post => "Hi all, Coding is awesome",
+		Post.create(:post => 'Hi all, Coding is awesome',
 								:user => User.create(:username => 'luisma',
 																		:name => 'Luis',
 																		:email => 'luis@gmail.com',
@@ -18,14 +17,10 @@ feature 'List of all posts' do
 																		)
 								)
 	end
-
-	scenario 'When visiting the home page' do
+	scenario 'filters posts by username when click username' do
 		visit '/'
-		expect(page).to have_content('Hi all, Coding is awesome')
-		expect(page).to have_content('@luisma')
-		expect(page).to have_content('Went to Makers Academy today')
-		expect(page).to have_content('@marcoaam')
+		click_link('@marcoaam')
+		expect(page).to have_content('Love coding')
+		expect(page).not_to have_content('Hi all, Coding is awesome')
 	end
-
 end
-

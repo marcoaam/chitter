@@ -1,4 +1,4 @@
 get '/' do
-	@posts = Post.all
+	@posts = Post.reverse_order
 	erb :index
 end

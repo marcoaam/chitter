@@ -7,4 +7,8 @@ class Post
 
 	belongs_to :user
 
+	def self.reverse_order
+		self.all.reverse
+	end
+
 end
