@@ -5,6 +5,7 @@ class User
 
 	include DataMapper::Resource
 
+	validates_uniqueness_of :username, :email
 	validates_confirmation_of :password
 
 	property :id, Serial

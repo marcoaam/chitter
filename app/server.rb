@@ -16,6 +16,8 @@ require_relative './models/user'
 require_relative './models/post'
 
 require_relative './controllers/application'
-require_relative './controllers/user_management'
 require_relative './controllers/posts'
+require_relative './controllers/users/create'
+require_relative './controllers/users/sign_in'
+require_relative './controllers/users/sign_out'
 
