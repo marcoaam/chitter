@@ -1,0 +1,164 @@
+body {
+	font-family: Helvetica;
+	background-image:url('/images/surf.jpg');
+	background-size: 100%;
+	text-align: center;
+}
+
+html, body {
+  height: 100%;
+}
+
+header {
+	display: flex;
+	background-color: rgba(70, 70, 70, 0.9);
+	padding: 10px;
+	margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+header #logo {
+  margin-right: 20px;
+	font-size: 35px;
+	padding: 10px;
+	text-shadow: 1px 1px 0px #000000;
+}
+
+header > * {
+  margin: auto 0;
+}
+
+header a.logo:hover {
+  color: orange;
+}
+
+header #user-links {
+  flex: 1;
+  text-align: right;  
+}
+header #user-links > * {
+  display: inline-block;
+}
+header #user-links #welcome-message {
+	color: white;
+  font-size: 14px;
+  vertical-align: top;
+}
+
+content {
+	font-size: 14px;
+	color: #323810;
+}
+
+form.general {
+	color: black;
+	font-size: 12px;
+	background-color: white;
+	width: 130px;
+	margin: 0 auto;
+	text-align: left;
+	padding: 30px;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 4px;
+}
+
+form.post_box {
+	color: black;
+	font-size: 12px;
+	background-color: white;
+	width: 300px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 30px;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 4px;
+}
+
+#post {
+	width: 750px;
+	padding: 10px;
+	margin: 0 auto;
+	margin-bottom: 7px;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 4px;
+}
+
+a.post {
+	text-decoration: none;
+	color: #2AA2FF;
+	text-shadow: 0 0 2px rgba(255,255,255,0.4);
+}
+
+a.button {
+	display: inline-block;
+  width: 100px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #2AA2FF;
+  border: 1px solid white;
+  color: white; /*text colour*/
+  padding: 4px 8px;
+  text-align: center;
+  border-radius: 4px; /*rounded corners*/
+  margin-left: 5px;
+  margin-right: 5px;
+  text-shadow: 0 0 2px rgba(0,0,0,0.4); /*for readability*/
+	text-decoration: none;
+}
+
+input.button {
+	display: inline-block;
+  width: 100px;
+  cursor: pointer;
+  font-size: 12px;
+  background-color: #2AA2FF;
+  border: 1px solid white;
+  color: white; /*text colour*/
+  padding: 2px 3px;
+  text-align: center;
+  border-radius: 4px; /*rounded corners*/
+  margin-left: 5px;
+  margin-right: 5px;
+  text-shadow: 0 0 2px rgba(0,0,0,0.4); /*for readability*/
+	text-decoration: none;
+}
+
+a.button:hover, input.button:hover {
+	background-color: orange;
+}
+
+a.logo {
+	text-decoration: none;
+	color: white;
+}
+
+.notice {
+	width: 750px;
+	text-align: center;
+  margin: 0 auto;
+	border-radius: 4px;
+  background-color: rgba(67,183,120,0.75);
+  margin-bottom: 10px;
+  color: white;
+  padding: 5px;
+}
+
+ul.error {
+	width: 750px;
+	text-align: center;
+  margin: 0 auto;
+	border-radius: 4px;
+  background-color: rgba(169,29,42,0.75); 
+  margin-bottom: 10px;
+  color: white;
+  padding: 5px;
+}
+
+.clearfix:after { 
+  content: "."; 
+  visibility: hidden; 
+  display: block; 
+  height: 0; 
+  clear: both;
+}

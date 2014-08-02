@@ -1,4 +1,4 @@
 <% @posts.each do |post| %>
-	<%= post.post %> 
-	Posted by <a href="/filter/<%=post.user.username %>">@<%= post.user.username %></a><br>
+	<div id="post"><%= post.post %> <br>
+	Posted by <a class="post" href="/filter/<%=post.user.username %>">@<%= post.user.username %></a></div>
 <% end %>

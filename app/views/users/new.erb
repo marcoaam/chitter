@@ -1,8 +1,8 @@
-<form method="POST" action="/users/new">
-	<input type="text" name="username">
-	<input type="text" name="name">
-	<input type="email" name="email">
-	<input type="password" name="password">		
-	<input type="password" name="password_confirmation">
-	<input type="submit" value="Sign up">
+<form class="general" method="POST" action="/users/new">
+	Name: <br><input type="text" name="name" required><br>
+	Username: <br><input type="text" name="username" value="<%=@user.username%>" required><br>
+	Email: <br><input type="email" name="email" value="<%=@user.email%>" required><br>
+	Password: <br><input type="password" name="password" required><br>		
+	Confirm Password: <br><input type="password" name="password_confirmation" required><br><br>
+	<input class="button" type="submit" value="Sign up">
 </form>

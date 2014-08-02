@@ -9,14 +9,13 @@ get '/posts/create' do
 end
 
 post '/posts/create' do
-	user = User.first(:id => session[:user_id])
-	Post.create(:post => params[:post_text],
-								:user => user)
+	Post.create(:post 		=> params[:post_text],
+							:user_id  => session[:user_id])
 	redirect to('/')
 end
 
 get '/filter/:user' do
 	user = User.first(:username => params[:user])
-	@posts = Post.all(:user_id => user.id).reverse_order
+	@posts = Post.all(:user_id 	=> user.id).reverse_order
 	erb :"filter/posts"
 end

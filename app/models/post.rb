@@ -2,8 +2,8 @@ class Post
 
 	include DataMapper::Resource
 
-	property :id, Serial
-	property :post, Text
+	property :id, 	Serial
+	property :post, Text, length: 1..150
 
 	belongs_to :user
 

@@ -6,11 +6,11 @@ include SessionHelper
 feature 'When user is signed in' do
 
 	before(:each) do
-	User.create(:username => 'marcoaam',
-							:name => 'Marco',
-							:email => 'marco@gmail.com',
-							:password => 'test',
-							:password_confirmation => 'test')
+	User.create(:username 							=> 'marcoaam',
+							:name 									=> 'Marco',
+							:email 									=> 'marco@gmail.com',
+							:password 							=> 'test',
+							:password_confirmation 	=> 'test')
 	end
 
 	scenario 'Can create a post' do
