@@ -17,4 +17,5 @@ require_relative './models/post'
 
 require_relative './controllers/application'
 require_relative './controllers/user_management'
+require_relative './controllers/posts'
 
