@@ -20,8 +20,9 @@ header {
 }
 
 header #logo {
+	font-family: Lobster;
   margin-right: 20px;
-	font-size: 35px;
+	font-size: 40px;
 	padding: 10px;
 	text-shadow: 1px 1px 0px #000000;
 }
@@ -106,6 +107,7 @@ a.button {
 	display: inline-block;
   width: 100px;
   cursor: pointer;
+  font-family: 	Lobster;
   font-size: 14px;
   background-color: #2AA2FF;
   border: 1px solid white;
