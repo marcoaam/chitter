@@ -5,9 +5,16 @@
 </head>
 <body>
 	<%= erb :header %>
+	<div id="content">
 	<%= erb :flash_errors %>
 	<content>
   <%= yield %>
 	</content>
+</div>
 </body>
+<footer>
+  Developed by Marco Araujo during Makers Academy Web development course<br><br>
+  Contact information: <a class="footer" href="mailto:marcopersonal@outlook.com">
+  marcopersonal@outlook.com</a>.
+</footer>
 </html>

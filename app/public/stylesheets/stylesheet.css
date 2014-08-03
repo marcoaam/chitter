@@ -4,7 +4,6 @@ body {
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-color: #0091bf;
-	text-align: center;
 }
 
 html, body {
@@ -13,9 +12,10 @@ html, body {
 
 header {
 	display: flex;
-	background-color: rgba(70, 70, 70, 0.9);
+	background-color: rgba(80, 80, 80, 0.9);
 	padding: 10px;
 	margin-bottom: 20px;
+	border-bottom: 2px solid orange;
   padding: 0 20px;
 }
 
@@ -88,7 +88,7 @@ form.post_box {
 
 a.post {
 	text-decoration: none;
-	color: #2AA2FF;
+	color: orange;
 	text-shadow: 0 0 2px rgba(255,255,255,0.4);
 }
 
@@ -102,6 +102,7 @@ img.post {
 }
 
 a.button {
+	position: relative;
 	display: inline-block;
   width: 100px;
   cursor: pointer;
@@ -114,6 +115,7 @@ a.button {
   border-radius: 4px; /*rounded corners*/
   margin-left: 5px;
   margin-right: 5px;
+  margin-bottom: 20px;
   text-shadow: 0 0 2px rgba(0,0,0,0.4); /*for readability*/
 	text-decoration: none;
 }
@@ -200,4 +202,31 @@ input.fakefile {
   margin-right: 5px;
   text-shadow: 0 0 2px rgba(0,0,0,0.4); /*for readability*/
 	text-decoration: none;
+}
+
+#content {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -50px;
+}
+
+footer {
+	color: white;
+	font-size: 12px;
+  text-align: center;
+  float: center;
+	background-color: rgba(80, 80, 80, 0.9);
+  height: 50px;
+  padding: 10px;
+	margin-top: 20px;
+	border-top: 2px solid orange;
+}
+
+a.footer {
+	color: orange;
+}
+
+footer > * {
+    margin: auto inherit;
 }
