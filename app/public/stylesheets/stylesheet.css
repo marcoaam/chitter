@@ -1,7 +1,7 @@
 body {
 	font-family: Helvetica;
 	background-image:url('/images/surf.jpg');
-	background-size: 100%;
+	background-repeat: no-repeat;
 	text-align: center;
 }
 
@@ -32,14 +32,14 @@ header a.logo:hover {
   color: orange;
 }
 
-header #user-links {
+header #user-posts {
   flex: 1;
   text-align: right;  
 }
-header #user-links > * {
+header #user-posts > * {
   display: inline-block;
 }
-header #user-links #welcome-message {
+header #user-posts #welcome-message {
 	color: white;
   font-size: 14px;
   vertical-align: top;
@@ -90,6 +90,15 @@ a.post {
 	text-shadow: 0 0 2px rgba(255,255,255,0.4);
 }
 
+img.post {
+	width: 300px;
+	margin: 10px;
+	background-color: white;
+	text-shadow: 0 0 2px rgba(0,0,0,0.4);
+	padding: 4px;
+	border-radius: 4px;
+}
+
 a.button {
 	display: inline-block;
   width: 100px;
@@ -108,6 +117,7 @@ a.button {
 }
 
 input.button {
+	position: relative;
 	display: inline-block;
   width: 100px;
   cursor: pointer;
@@ -124,7 +134,7 @@ input.button {
 	text-decoration: none;
 }
 
-a.button:hover, input.button:hover {
+a.button:hover, input.button:hover, input.fakefile:hover {
 	background-color: orange;
 }
 
@@ -161,4 +171,31 @@ ul.error {
   display: block; 
   height: 0; 
   clear: both;
+}
+
+input.file {
+	position: absolute;
+	text-align: right;
+	-moz-opacity:0 ;
+	filter:alpha(opacity: 0);
+	opacity: 0;
+	z-index: 2;
+}
+
+input.fakefile {
+	z-index: 1;
+	cursor: pointer;
+	position: relative;
+	width: 100px;
+  font-size: 12px;
+  background-color: #2AA2FF;
+  border: 1px solid white;
+  color: white; /*text colour*/
+  padding: 2px 3px;
+  text-align: center;
+  border-radius: 4px; /*rounded corners*/
+  margin-left: 5px;
+  margin-right: 5px;
+  text-shadow: 0 0 2px rgba(0,0,0,0.4); /*for readability*/
+	text-decoration: none;
 }

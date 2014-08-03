@@ -9,9 +9,15 @@ get '/posts/create' do
 end
 
 post '/posts/create' do
-	Post.create(:post 		=> params[:post_text],
-							:user_id  => session[:user_id])
-	redirect to('/')
+	if @picture_name != ""
+		Post.create(:post 		=> params[:post_text],
+								:user_id  => session[:user_id],
+								:picture  => params[:picture_name])
+	else
+		Post.create(:post 		=> params[:post_text],
+								:user_id  => session[:user_id])
+	end
+		redirect to('/')
 end
 
 get '/filter/:user' do
