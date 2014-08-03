@@ -3,6 +3,7 @@ require 'data_mapper'
 require 'rack-flash'
 require 'bcrypt'
 require 'haml'
+require 'newrelic_rpm'
 
 enable :sessions
 set :session_secret, 'super secret'

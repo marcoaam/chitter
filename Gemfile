@@ -7,6 +7,7 @@ gem 'bcrypt-ruby'
 gem 'rack-flash3'
 gem 'haml'
 gem 'pg'
+gem 'newrelic_rpm'
 
 group :development, :test do
 	gem 'rspec'
