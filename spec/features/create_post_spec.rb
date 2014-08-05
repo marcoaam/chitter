@@ -23,12 +23,21 @@ feature 'When user is signed in' do
 		expect(page).to have_content('I love coding!! Posted by @marcoaam')
 	end
 
+	scenario 'Gets a error message when tries to upload without any file' do
+		visit '/'
+		expect(page).not_to have_content('Picture post')
+		sign_in('marcoaam', 'test')
+		click_link('Picture post')
+		click_button("Upload!")
+		expect(page).to have_content('You must select a picture to upload')
+	end
+
 	scenario 'Can create a image post' do
 		visit '/'
 		expect(page).not_to have_content('Picture post')
 		sign_in('marcoaam', 'test')
 		click_link('Picture post')
-		attach_file('myfile', 'app/public/images/marco.jpg')
+		attach_file('myfile', 'public/images/marco.jpg')
 		click_button("Upload!")
 		fill_in :post_text, with: 'I love coding!!'
 		click_button('Post')

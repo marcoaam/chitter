@@ -6,18 +6,26 @@ get "/upload" do
   	flash[:error] = ["You must be signed in to be able to upload"]
   end
 end      
-    
-# Handle POST-request (Receive and save the uploaded file)
+
 post "/upload" do
-	if params['myfile'][:type] == ('image/jpeg' || 'image/png')
-		@picture_name = params['myfile'][:filename]
-	  File.open('app/public/uploads/' + @picture_name, "w") do |f|
-	    f.write(params['myfile'][:tempfile].read)
-  		flash[:notice] = "The file was successfully uploaded!"
-  		erb :"posts/create"
+	if params['myfile']
+		if params['myfile'][:type] == ('image/jpeg' || 'image/png')
+			@picture_name = params['myfile'][:filename]
+			upload_picture
+	  	flash[:notice] = "The file was successfully uploaded!"
+	  	erb :"posts/create"
+		else
+			flash[:errors] = ['Invalid file format, Only jpg or png please']
+			redirect to('/upload')
 		end
 	else
-		flash[:errors] = ['Invalid file format, Only jpg or png please']
+		flash[:errors] = ['You must select a picture to upload']
 		redirect to('/upload')
+	end
+end
+
+def upload_picture
+	File.open('public/uploads/' + @picture_name, "w") do |f|
+		f.write(params['myfile'][:tempfile].read)
 	end
 end
