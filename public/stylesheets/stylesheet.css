@@ -3,7 +3,7 @@ body {
 	background-image:url('/images/surf.jpg');
 	background-size: 100%;
 	background-repeat: no-repeat;
-	background-color: #0091bf;
+	background-attachment: fixed;
 }
 
 html, body {
